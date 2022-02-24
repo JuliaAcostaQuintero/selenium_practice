@@ -25,10 +25,6 @@ class TestCases(unittest.TestCase):
     def test_buy_items(self):
         self.driver.implicitly_wait(10)
         self.indexPage.search('blouse')
-        self.result_text = self.driver.find_element(
-            *PageIndexLocators.search_results).text
-        self.assertTrue(
-            '1 result has been found.' in self.result_text)
         self.indexPage.click_item()
         self.ItemPage.select_size('L')
         self.ItemPage.select_quantity(4)
